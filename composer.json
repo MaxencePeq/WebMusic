@@ -1,0 +1,24 @@
+{
+    "name": "maxence/music-v2",
+    "description": "Site répértoire de musique ! (Base by Mr.Cutrona)",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pequ0004",
+            "email": "maxence.pequeno@etudiant.univ-reims.fr"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*"
+    },
+    "scripts": {
+        "start": "bin/run-serveur.sh"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.75"
+    }
+}
