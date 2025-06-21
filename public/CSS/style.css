@@ -42,6 +42,7 @@ a {
     transition: transform 0.2s ease-in-out;
 }
 
+
 .genre:hover {
     transform: translateY(-4px);
 }
