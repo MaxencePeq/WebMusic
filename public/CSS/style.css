@@ -1,0 +1,53 @@
+/**  Color chart
+#F0604D  +++++
+#F38071  ++++
+#F79F95  +++
+#FBBFB8  ++
+#FFDFDB  +
+ */
+
+a{
+    text-decoration: none;
+    color: #FFDFDB ;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #F0604D ;
+}
+
+.header, .footer{
+    background-color: #F79F95;
+    color: #FFDFDB ;
+    margin: 1rem;
+    padding: 1rem;
+    border: 20px solid #F38071;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+}
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    min-height: 500px;
+}
+h3{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.genre{
+    display: flex;
+    flex-direction: column;
+
+    color: #FFDFDB ;
+    background-color: #F38071 ;
+
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 5px solid #F79F95;
+    border-radius: 10px;
+
+}

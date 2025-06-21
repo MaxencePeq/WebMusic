@@ -8,7 +8,7 @@ class artist {
     private int $id;
     private string $name;
 
-    public function getName(): string
+    public function getName(): string|bool
     {
         return $this->name;
     }

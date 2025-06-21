@@ -47,5 +47,29 @@ SQL);
 
     }
 
+    /**
+     * Renvois le nom de l'artist ayant le plus d'album, depuis l'id du genre
+     * @param int $genreID
+     * @return artist
+     */
+    public static function findMostPopularArtistByGenreId(int $genreID){
+
+        $query = MyPdo::getInstance()->prepare(<<<SQL
+SELECT ar.*
+FROM pequ0004_film.artist ar
+JOIN (
+    SELECT artistId
+    FROM pequ0004_film.album
+    WHERE genreId = ?
+    GROUP BY artistId
+    ORDER BY COUNT(*) DESC
+) AS top_artist ON ar.id = top_artist.artistId;
+SQL);
+        $query->setFetchMode(PDO::FETCH_CLASS, artist::class);
+        $query->execute([$genreID]);
+        return $query->fetch();
+
+    }
+
 
 }
