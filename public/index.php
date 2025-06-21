@@ -37,9 +37,8 @@ foreach ($genre as $g) {
         {$artistLink}
     </div>
 HTML);
-
-
 }
+
 
 $webpage->appendContent(<<<HTML
 </div>
