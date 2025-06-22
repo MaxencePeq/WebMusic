@@ -21,13 +21,17 @@ $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 
 
 $webpage->appendContent(<<<HTML
-<div class="box">
-    <div class="statsSongPoster"> <img class="SongCover" src="Cover.php?coverId={$album->getCoverId()}"/> </div>
+<div class="songDetail">
+    <div class="statsSongPoster"> 
+        <img class="SongCover" src="Cover.php?coverId={$album->getCoverId()}" alt="cover image"/> 
+    </div>
     <div class="stats">
-        <h3> Numéro dans l'album : {$track->getNumber()}<h3>
-        <h3> Durée du titre : {$SongDuractionInminutes} mins, {$SongDuractionInSeconde} sec<h3>
-        
+        <h3>Numéro dans l'album : {$track->getNumber()}</h3>
+        <h3>Durée du titre : {$SongDuractionInminutes} mins, {$SongDuractionInSeconde} sec</h3>
+    </div>
+</div>
 HTML);
+
 
 
 $webpage->appendContent(<<<HTML
