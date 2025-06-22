@@ -8,6 +8,5 @@ class songCollection
         $baselink = 'https://www.youtube.com/results?search_query=';
         $baselink .= "{$artistName}+{$songName}";
         return $baselink;
-
     }
 }
