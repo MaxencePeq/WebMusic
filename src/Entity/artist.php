@@ -23,6 +23,18 @@ class artist {
      * @param int $artistId
      * @return artist
      */
+    public static function findById (int $artistId):artist{
+        $query = MyPdo::getInstance()->prepare("SELECT * FROM artist WHERE id = ?");
+        $query->setFetchMode(MyPdo::FETCH_CLASS, Artist::class);
+        $query->execute([$artistId]);
+        return $query->fetch();
+    }
+
+    /**
+     * Renvoie un artist depuis son ID
+     * @param int $artistId
+     * @return artist
+     */
     public static function FindArtistByArtistId(int $artistId): Artist{
         $query = MyPdo::getInstance()->prepare("SELECT id, name FROM artist WHERE id= ?");
         $query->setFetchMode(\PDO::FETCH_CLASS, Artist::class);
