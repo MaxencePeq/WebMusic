@@ -23,7 +23,7 @@ a {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.box {
+.box, .albumBox {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -31,7 +31,7 @@ a {
     gap: 1.5rem;
 }
 
-.genre {
+.genre, .artistAlbum, .artist  {
     background-color: #F79F95;
     border-radius: 12px;
     padding: 1rem;
@@ -41,11 +41,7 @@ a {
     color: #FFDFDB;
     transition: transform 0.2s ease-in-out;
 }
-
-
-.genre:hover {
-    transform: translateY(-4px);
-}
+a
 
 .genre h3 {
     font-size: 1.2rem;
@@ -57,3 +53,63 @@ a {
     margin: 0.3rem 0;
     font-size: 0.95rem;
 }
+
+
+.albumDetail {
+    background-color: #F79F95;
+    color: #FFDFDB;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.albumDetail .SongCover {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+
+.albumDetail h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.tracklist {
+    list-style: decimal inside;
+    padding-left: 0;
+    text-align: left;
+    color: #fff;
+}
+
+.tracklist li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.tracklist a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.tracklist a:hover {
+    color: #FFE5E1;
+}
+
+.genre:hover,
+.artistAlbum:hover,
+.artist:hover {
+    transform: translateY(-6px);
+    filter: brightness(0.95);
+    cursor: pointer;
+}
+
+

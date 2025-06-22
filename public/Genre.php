@@ -11,6 +11,7 @@ $genre = genre::findByGenreId($genreID);
 
 $webpage = new \html\AppWebPage();
 $webpage->setTitle('Liste des artistes de ' . $genre->getName());
+$webpage->appendCssUrl('http://localhost:8000/css/style.css');
 
 /* $artist = array */
 $artist = Collection\genreCollection::findArtistByGenreId($genreID);
@@ -23,9 +24,10 @@ foreach ($artist as $a) {
     $name = $a->getName();
 
     $webpage->appendContent(<<<HTML
-        <div class="artist">
-            <a href="Artist.php?artistId={$a->getId()}">{$name}</a>
-        </div>
+    <a href="Artist.php?artistId={$a->getId()}" class="artist">
+         {$name}
+    </a>
+
 HTML);
 }
 

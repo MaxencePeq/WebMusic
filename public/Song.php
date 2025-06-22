@@ -17,6 +17,7 @@ $album = Album::findById($track->getAlbumId());
 
 $webpage = new AppWebPage();
 $webpage->setTitle($song->getName());
+$webpage->appendCssUrl('http://localhost:8000/css/style.css');
 
 
 $webpage->appendContent(<<<HTML

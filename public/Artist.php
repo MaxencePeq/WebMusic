@@ -11,6 +11,7 @@ $artist = artist::FindArtistByArtistId($artistId);
 $artistAlbum = artist::getAllAlbum($artistId);
 
 $webpage = new AppWebPage();
+$webpage->appendCssUrl('http://localhost:8000/css/style.css');
 
 $name = $artist->getName();
 $webpage->setTitle($name);
@@ -28,8 +29,13 @@ HTML);
 foreach ($artistAlbum as $album) {
     $name = $album->getName();
     $webpage->appendContent(<<<HTML
-    <img src="Cover.php?coverId={$album->getCoverId()}"/> 
-    <a href="Album.php?albumId={$album->getId()}">{$name}</a>
+<a href="Album.php?albumId={$album->getId()}">
+    <div class="artistAlbum">
+        <img src="Cover.php?coverId={$album->getCoverId()}" /> 
+        {$name}
+    </div>
+</a>    
+
 HTML);
 }
 

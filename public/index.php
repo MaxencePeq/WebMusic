@@ -31,14 +31,16 @@ foreach ($genre as $g) {
     }
 
     $webpage->appendContent(<<<HTML
-    <div class="genre">
-        <a href="Genre.php?genreId={$genreId}"> <h3>{$name}</h3></a>
+<div class="genre">
+    <a href="Genre.php?genreId={$genreId}">
+        <h3>{$name}</h3>
         <p>exemple :</p>
         {$artistLink}
-    </div>
+    </a>
+</div>
 HTML);
-}
 
+}
 
 $webpage->appendContent(<<<HTML
 </div>
