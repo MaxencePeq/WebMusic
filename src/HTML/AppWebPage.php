@@ -24,7 +24,7 @@ class AppWebPage extends WebPage
         </head>
         <body>  
              <div class="header">
-                <a class="IndexButton" href="index.php">
+                <a class="IndexButton" href="http://localhost:8000">
                     <button type="button">Retour index</button>
                 </a>
                 <div class="headerTitle">
