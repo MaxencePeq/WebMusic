@@ -12,6 +12,34 @@ $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 
 $genre = Collection\genreCollection::findAll();
 
+
+
+$webpage->appendContent(<<<HTML
+<div class="sorting">
+
+    <form method="post" >
+        <div class="sortingByName">
+            <input type="hidden" name="Change_Order" value="1">
+            <input type="submit" name="order" value="sortByName">
+        </div>
+    </form>
+    
+    <form method="post" >
+        <div class="sortingByPopularity">
+            <input type="hidden" name="Change_Order" value="1">
+            <input type="submit" name="order" value="sortByPopularity">
+        </div>
+    </form>
+
+HTML);
+
+
+$webpage->appendContent(<<<HTML
+</div>
+HTML);
+
+
+
 $webpage->appendContent(<<<HTML
 <div class="box">
 HTML);

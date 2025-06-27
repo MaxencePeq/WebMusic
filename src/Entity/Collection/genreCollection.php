@@ -11,16 +11,41 @@ class genreCollection
 {
 
     /**
-     * Renvoi tous les genres
+     * Renvoi tous les genres en fonction des boutons de tri
      * @return genre[]
      */
     public static function findAll():array
     {
+
         $query = MyPdo::getInstance()->prepare(<<<SQL
         SELECT id, name
         FROM genre
         ORDER BY name
         SQL);
+
+
+        if (isset($_POST['Change_Order']) && isset($_POST['order'])) {
+
+            if ($_POST['order'] === 'sortByName') {
+
+                $query = MyPdo::getInstance()->prepare(<<<SQL
+        SELECT id, name
+        FROM genre
+        ORDER BY name
+        SQL);
+
+            } else if ($_POST['order'] === 'sortByPopularity') {
+
+                $query = MyPdo::getInstance()->prepare(<<<SQL
+        SELECT genre.id, genre.name, COUNT(DISTINCT album.artistId)
+        FROM genre
+        JOIN album ON genre.id = album.genreId
+        GROUP BY genre.id, genre.name
+        ORDER BY COUNT(DISTINCT album.artistId) DESC;
+
+        SQL);
+            }
+        }
 
         $query->setFetchMode(PDO::FETCH_CLASS, genre::class);
         $query->execute();
@@ -29,7 +54,7 @@ class genreCollection
     }
 
     /**
-     * Renvoie tout les artist(s) qui on fait au moins un album du genre {$genreId}
+     * Renvoie tout les artist(s) qui ont fait au moins un album du genre {$genreId}
      * @param int $genreID
      * @return artist[]
      */
