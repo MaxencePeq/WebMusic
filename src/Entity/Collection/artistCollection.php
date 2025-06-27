@@ -14,4 +14,5 @@ class artistCollection
         $baselink .= "{$artistName}+Interview";
         return $baselink;
     }
+
 }
