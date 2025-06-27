@@ -21,10 +21,9 @@ $link = Collection\artistCollection::getInterviewFromArtist($artistId);
 $webpage->appendContent(<<<HTML
 <div class="page">
     <div class="info">
-    <a href="{$link}">
-        <h2>Lien vers des interviews de {$name}</h2>
-    </a>
-    
+        <a href="{$link}">
+            <h2>Lien vers des interviews de {$name}</h2>
+        </a>
     </div>
 HTML);
 

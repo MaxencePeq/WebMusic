@@ -201,8 +201,24 @@ a {
     cursor: pointer;
 }
 
-.page{
+
+.page {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    position: relative;
 }
 
+.info {
+    padding-left: 1rem;
+    margin: 1.5rem;
+    margin-top: 0.4rem;
+    background-color: #F79F95;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease-in-out, transform 0.2s ease-in-out;
+    color: #FFDFDB;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
