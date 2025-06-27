@@ -41,12 +41,6 @@ Un schéma de cette base de données est disponible à la racine du projet (`sch
 
 ---
 
-## Pour acceder a la docs : 
-   ```bash
-   open docs/index.html
-   /** ne vous occupez que des Namespaces **/
-   ```
-
 ## 🎧 Fonctionnalités actuelles
 
 - Affichage des albums et artistes
