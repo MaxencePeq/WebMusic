@@ -23,9 +23,36 @@ a {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.header{
-    margin-bottom: 0.5rem;
+ .header {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     padding: 20px;
+     margin-bottom: 0.5rem;
+ }
+
+.header .IndexButton {
+    position: absolute;
+    left: 20px;
 }
+.header button{
+    padding: 1rem;
+    font-size: medium;
+    cursor: pointer;
+    border: #F79F95;
+    background-color: #F79F95;
+    border-radius: 10px;
+    color: #FFDFDB;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.headerTitle h1 {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+}
+
 
 .box, .albumBox {
     display: flex;

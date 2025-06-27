@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 namespace html;
@@ -25,7 +24,12 @@ class AppWebPage extends WebPage
         </head>
         <body>  
              <div class="header">
+                <a class="IndexButton" href="index.php">
+                    <button type="button">Retour index</button>
+                </a>
+                <div class="headerTitle">
                 <h1>{$this->escapeString($this->getTitle())}</h1>
+                </div>
              </div>
              
              <div class="content">
