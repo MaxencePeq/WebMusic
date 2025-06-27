@@ -16,11 +16,17 @@ $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 $name = $artist->getName();
 $webpage->setTitle($name);
 
+$link = Collection\artistCollection::getInterviewFromArtist($artistId);
+
 $webpage->appendContent(<<<HTML
 <div class="page">
+    <div class="info">
+    <a href="{$link}">
+        <h2>Lien vers des interviews de {$name}</h2>
+    </a>
+    
+    </div>
 HTML);
-
-/* Boucle style */
 
 $webpage->appendContent(<<<HTML
 <div class="albumBox">

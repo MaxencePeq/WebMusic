@@ -65,4 +65,5 @@ class artist {
         return $query->fetchAll();
     }
 
+
 }

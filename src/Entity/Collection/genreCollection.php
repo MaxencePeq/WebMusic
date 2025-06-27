@@ -54,7 +54,7 @@ class genreCollection
     }
 
     /**
-     * Renvoie tout les artist(s) qui ont fait au moins un album du genre {$genreId}
+     * Renvoie tous les artist(s) qui ont fait au moins un album du genre {$genreId}
      * @param int $genreID
      * @return artist[]
      */
