@@ -20,14 +20,14 @@ $webpage->appendContent(<<<HTML
     <form method="post" >
         <div class="sortingByName">
             <input type="hidden" name="Change_Order" value="1">
-            <input type="submit" name="order" value="sortByName">
+            <input type="submit" name="order" value="Trier par nom">
         </div>
     </form>
     
     <form method="post" >
         <div class="sortingByPopularity">
             <input type="hidden" name="Change_Order" value="1">
-            <input type="submit" name="order" value="sortByPopularity">
+            <input type="submit" name="order" value="Trier par popularité">
         </div>
     </form>
 

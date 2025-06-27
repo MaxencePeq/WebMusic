@@ -26,7 +26,7 @@ class genreCollection
 
         if (isset($_POST['Change_Order']) && isset($_POST['order'])) {
 
-            if ($_POST['order'] === 'sortByName') {
+            if ($_POST['order'] === 'Trier par nom') {
 
                 $query = MyPdo::getInstance()->prepare(<<<SQL
         SELECT id, name
@@ -34,7 +34,7 @@ class genreCollection
         ORDER BY name
         SQL);
 
-            } else if ($_POST['order'] === 'sortByPopularity') {
+            } else if ($_POST['order'] === 'Trier par popularité') {
 
                 $query = MyPdo::getInstance()->prepare(<<<SQL
         SELECT genre.id, genre.name, COUNT(DISTINCT album.artistId)
