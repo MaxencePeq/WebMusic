@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'], $_POST['sea
     }
 }
 
-
 $webpage->appendContent(<<<HTML
 <div class="sorting">
     <form method="post">

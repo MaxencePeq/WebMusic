@@ -1,67 +1,123 @@
-# 🎵 WebMusic
+# 🎵 WebMusic - Projet PHP
 
-**WebMusic** est un projet personnel que je développe en dehors de mes études.  
-C’est mon tout premier projet web, donc certaines erreurs (bugs, problèmes de sécurité, redondances ou bibliothèques inutilisées) peuvent être présentes. Merci pour votre compréhension !
-
----
-
-## 📚 Description
-
-Ce site a pour objectif de référencer des musiques à partir d’une base de données fournie par mon professeur.  
-Un schéma de cette base de données est disponible à la racine du projet (`schema.png` ou équivalent).
+Ce projet est un site web musical développé en PHP avec une base de données MySQL.  
+Il permet de rechercher des musiques, artistes, albums, etc.
 
 ---
 
-## 🚀 Installation et lancement
+## 📦 Prérequis
 
-### Prérequis :
-- PHP >= 8.1
-- Composer
+Avant de commencer, assurez-vous d’avoir installé sur votre machine :
 
-### Étapes :
-
-1. Ouvrez un terminal dans le dossier du projet.
-2. Installez les dépendances :
-   ```bash
-   composer install
-   ```
-3. Générez l'autoloader :
-   ```bash
-   composer dump-autoload
-   ```
-   *(ou simplement `composer du` si vous avez un alias configuré)*
-
-4. Lancez le serveur local :
-   ```bash
-   composer start
-   ```
-
-5. Ouvrez votre navigateur à l'adresse suivante :  
-   [http://localhost:8000/](http://localhost:8000/)
+- [PHP (>= 8.0)](https://www.php.net/)
+- [Composer](https://getcomposer.org/)
+- [MySQL ou MariaDB](https://www.mysql.com/) (installé via XAMPP, MAMP, WAMP ou directement)
+- Un serveur web local (ex: PHP server, XAMPP, etc.)
+- [phpMyAdmin](https://www.phpmyadmin.net/)
 
 ---
 
-## 🎧 Fonctionnalités actuelles
+## 🚀 Installation du projet
 
-- Affichage des albums et artistes
-- Accès aux détails d’un morceau via un clic
-- Navigation simple entre les genres et artistes
+1. **Clonez le projet :**
 
----
+```bash
+git clone https://github.com/MaxencePeq/WebMusic.git
+cd webmusic
+```
 
-## 🔧 Fonctionnalités à venir
+2. **Installez les dépendances PHP avec Composer :**
 
-- 🔙 Bouton "Retour" vers la page précédente
-- ➕ Menu complet d’ajout d’artistes, albums et musiques
-- 📝 Interface de modification d’artistes, albums et musiques
-
----
-
-## 🛠️ Remarques
-
-Ce projet est en constante amélioration.  
-N’hésitez pas à proposer des retours ou suggestions via une *issue* si vous l’utilisez ou l’explorez.
+```bash
+composer install
+composer du
+```
 
 ---
 
-Merci d’avoir lu, et bonne écoute ! 🎶
+## 🛠️ Configuration de la base de données
+
+### 1. Créez la base de données
+
+- Lancez **phpMyAdmin** (ou un autre outil MySQL).
+- Créez une nouvelle base de données nommée `webmusic`.
+
+> Vous pouvez choisir un autre nom, mais pensez à bien le reporter dans `.mypdo.ini`.
+
+---
+
+### 2. Importez les données
+
+- Dans **phpMyAdmin**, sélectionnez la base `webmusic`.
+- Cliquez sur **"Importer"**, puis sélectionnez le fichier `import.sql` fourni dans le projet.
+- Validez : les tables et données seront créées automatiquement.
+
+---
+
+## 🔐 Configuration de la connexion MySQL
+
+Le fichier `.mypdo.ini` contient les identifiants de connexion à la base de données **en local**.
+
+1. **Copiez le fichier d’exemple :**
+
+```bash
+cp .mypdo.ini.example .mypdo.ini
+```
+
+2. **Éditez le fichier `.mypdo.ini` selon votre configuration MySQL :**
+
+```ini
+host = localhost
+port = 3306
+dbname = webmusic
+user = root
+password = root
+```
+
+> Par défaut :
+> - Sur XAMPP/WAMP : `user = root` / `password = ` (vide)
+> - Sur MAMP : `user = root` / `password = root`
+
+---
+
+## 💻 Lancer le site localement
+
+Lancez un serveur PHP dans le dossier `public/` :
+
+```bash
+composer start
+```
+
+Ensuite, ouvrez [http://localhost:8000](http://localhost:8000) dans votre navigateur.
+
+---
+
+## 📚 Fichiers importants
+
+| Fichier/Dossier         | Rôle                                         |
+|-------------------------|----------------------------------------------|
+| `public/`               | Contient les pages web accessibles           |
+| `src/`                  | Contient les entités, collections, etc.      |
+| `.mypdo.ini`            | Connexion locale à la base MySQL             |
+| `import.sql`            | Script d’import de la base de données        |
+
+---
+
+## ❗ Important
+
+- **Ne pas versionner le fichier `.mypdo.ini`** (il est ignoré par `.gitignore`).
+- Chaque utilisateur doit créer et configurer ce fichier **en local**.
+
+---
+
+## 🙋‍♂️ Besoin d’aide ?
+
+Si vous avez une erreur du type :
+```
+Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user...
+```
+Cela signifie que vos identifiants dans `.mypdo.ini` sont incorrects. Vérifiez bien :
+
+- Le nom d’utilisateur (`user`)
+- Le mot de passe (`password`)
+- Le nom de la base (`dbname`)
