@@ -65,5 +65,12 @@ class artist {
         return $query->fetchAll();
     }
 
+    public static function findArtistByName (string $name):Artist{
+        $query = MyPdo::getInstance()->prepare("SELECT * FROM artist WHERE name = ?");
+        $query->setFetchMode(\PDO::FETCH_CLASS, Artist::class);
+        $query->execute([$name]);
+        return $query->fetch();
+}
+
 
 }

@@ -36,6 +36,10 @@ a {
     position: absolute;
     left: 20px;
 }
+.header .editButton{
+    position: absolute;
+    right: 20px;
+}
 .header button{
     padding: 1rem;
     font-size: medium;
@@ -62,7 +66,7 @@ a {
     gap: 1.5rem;
 }
 
-.genre, .artistAlbum, .artist  {
+.genre, .artistAlbum, .artist, .result  {
     background-color: #F79F95;
     border-radius: 12px;
     padding: 1rem;

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace html;
+namespace HTML;
 
-class AppWebPage extends WebPage
+class SearchAppWebPage extends WebPage
 {
     public function __construct(string $title = "")
     {
@@ -30,17 +30,10 @@ class AppWebPage extends WebPage
                 <div class="headerTitle">
                 <h1>{$this->escapeString($this->getTitle())}</h1>
                 </div>
-                <a class="editButton" href="http://localhost:8000/search.php">
-                    <button type="button">Rechercher</button>
-                </a>
              </div>
              
              <div class="content">
                 {$this->getBody()}
-            </div>
-        
-            <div class="footer">
-                <p>{$this->getLastModification()}</p>
             </div>
             
         </div>
