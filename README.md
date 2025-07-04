@@ -1,6 +1,6 @@
 # 🎵 WebMusic - Projet PHP
 
-Ce projet est un site web musical développé en PHP avec une base de données MySQL.  
+Ce projet est un site web musical étudiant développé en PHP avec une base de données MySQL.  
 Il permet de rechercher des musiques, artistes, albums, etc.
 
 ---
