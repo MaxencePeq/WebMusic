@@ -3,6 +3,9 @@
 Ce projet est un site web musical étudiant développé en PHP avec une base de données MySQL.  
 Il permet de rechercher des musiques, artistes, albums, etc.
 
+# Problème : 
+    - ne fonctionne pas sur Linux pour des problèmes de casse sur les namespaces, les noms de classes ou certains répertoires
+        -> En cours de correction
 ---
 
 ## 📦 Prérequis
@@ -31,6 +34,8 @@ cd webmusic
 ```bash
 composer install
 composer du
+(Si erreur de droit de lancement) : chmod +x bin/run-serveur.sh
+
 ```
 
 ---
