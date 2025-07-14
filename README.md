@@ -72,8 +72,6 @@ cp .mypdo.ini.example .mypdo.ini
 2. **Éditez le fichier `.mypdo.ini` selon votre configuration MySQL :**
 
 ```ini
-host = localhost
-port = 3306
 dbname = webmusic
 user = root
 password = root
