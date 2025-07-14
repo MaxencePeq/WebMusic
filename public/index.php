@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 use Entity\Collection;
 use Entity\genre;
-use html\WebPage;
+use html\webpage;
 use Database\MyPdo;
 
-$webpage = new \html\AppWebPage();
+$webpage = new \html\appwebpage();
 $webpage->setTitle('Genre musical');
 $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 

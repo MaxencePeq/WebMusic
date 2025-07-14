@@ -5,7 +5,7 @@ use Entity\album;
 use Entity\artist;
 use Entity\Collection;
 use Entity\song;
-use html\AppWebPage;
+use html\appwebpage;
 
 $songId = (int)$_GET['songId'];
 $song = song::findById($songId);
@@ -21,7 +21,7 @@ $artistName = $artist->getName();
 
 $link = Collection\songCollection::YoutubeLinkWithArtistAndSongName($artistName, $songName);
 
-$webpage = new AppWebPage();
+$webpage = new appwebpage();
 $webpage->setTitle($song->getName());
 $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 

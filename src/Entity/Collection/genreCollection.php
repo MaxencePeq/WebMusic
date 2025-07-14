@@ -77,24 +77,22 @@ SQL);
      * @param int $genreID
      * @return artist
      */
-    public static function findMostPopularArtistByGenreId(int $genreID){
-
+    public static function findMostPopularArtistByGenreId(int $genreID) {
         $query = MyPdo::getInstance()->prepare(<<<SQL
-SELECT ar.*
-FROM pequ0004_film.artist ar
-JOIN (
-    SELECT artistId
-    FROM pequ0004_film.album
-    WHERE genreId = ?
-    GROUP BY artistId
-    ORDER BY COUNT(*) DESC
-) AS top_artist ON ar.id = top_artist.artistId;
-SQL);
+        SELECT artist.*
+        FROM artist
+        JOIN album ON artist.id = album.artistId
+        WHERE album.genreId = ?
+        GROUP BY artist.id
+        ORDER BY COUNT(album.id) DESC
+        LIMIT 1
+    SQL);
+
         $query->setFetchMode(PDO::FETCH_CLASS, artist::class);
         $query->execute([$genreID]);
         return $query->fetch();
-
     }
+
 
 
 }

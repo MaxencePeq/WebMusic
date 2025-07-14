@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 use Entity\Collection;
-use html\WebPage;
+use html\webpage;
 use Database\MyPdo;
 
-$webpage = new \html\SearchAppWebPage();
+$webpage = new \html\searchappwebpage();
 $webpage->setTitle('Résultats de recherche');
 $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 

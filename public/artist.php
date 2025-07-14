@@ -4,13 +4,13 @@ declare(strict_types=1);
 use Entity\Collection;
 use Entity\artist;
 use Entity\genre;
-use html\AppWebPage;
+use html\appwebpage;
 
 $artistId = (int)$_GET['artistId'];
 $artist = artist::FindArtistByArtistId($artistId);
 $artistAlbum = artist::getAllAlbum($artistId);
 
-$webpage = new AppWebPage();
+$webpage = new appwebpage();
 $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 
 $name = $artist->getName();

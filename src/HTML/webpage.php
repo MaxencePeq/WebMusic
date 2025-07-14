@@ -7,7 +7,7 @@ namespace html;
 /**
  *
  */
-class WebPage
+class webpage
 {
     /**
      * @var string

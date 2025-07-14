@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace HTML;
 
-class SearchAppWebPage extends WebPage
+class searchappwebpage extends webpage
 {
     public function __construct(string $title = "")
     {

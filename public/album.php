@@ -4,14 +4,14 @@ declare(strict_types=1);
 use Entity\Collection;
 use Entity\album;
 use Entity\song;
-use html\AppWebPage;
+use html\appwebpage;
 
 $albumId = (int)$_GET['albumId'];
 $album = Album::findById($albumId);
 
 $allAlbumTrack = Collection\albumCollection::findAllTrackByAlbumId($albumId);
 
-$webpage = new AppWebPage();
+$webpage = new appwebpage();
 $webpage->setTitle("{$album->getName()}");
 $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 

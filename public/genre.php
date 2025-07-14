@@ -4,12 +4,12 @@ declare(strict_types=1);
 use Entity\Collection;
 use Entity\artist;
 use Entity\genre;
-use html\WebPage;
+use html\webpage;
 
 $genreID = (int)$_GET['genreId'];
 $genre = genre::findByGenreId($genreID);
 
-$webpage = new \html\AppWebPage();
+$webpage = new \html\appwebpage();
 $webpage->setTitle('Liste des artistes de ' . $genre->getName());
 $webpage->appendCssUrl('http://localhost:8000/css/style.css');
 
