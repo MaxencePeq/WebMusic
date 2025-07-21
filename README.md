@@ -72,9 +72,9 @@ cp .mypdo.ini.example .mypdo.ini
 2. **Éditez le fichier `.mypdo.ini` selon votre configuration MySQL :**
 
 ```ini
-dbname = webmusic
-user = root
-password = root
+dsn = "mysql:host=mysql;dbname=webmusic;charset=utf8"
+user = 'root'
+password = 'root'
 ```
 
 > Par défaut :
